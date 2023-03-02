@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
     <title>Document</title>
 </head>
+
 <body>
-    <div class="container"></div>
-    <link rel="stylesheet" href="">
-    <span></span>
+<div>
+    <header class="header-container">
+        <ul class="nav-links">
+            <button><li><a href="#">Home</a></li></button>
+            <button><li><a href="#">Contact</a></li></button>
+           <button><li><a href="#">About</a></li></button> 
+        </ul>
+        <img src="_images/lovecalculator.PNG" alt="Image">
+    </header>
+</div>
+    <div class="app-container">
+        <form action="get" class="loveForm" onsubmit="validateForm()">
+            <div>
+                <label for="nameOne">Name 1</label>
+                <input type="text" id="nameOne" name="nameOne" placeholder="Enter name.." onfocus="true" onkeypress="test()">
+            </div>
+            <div>
+                <label for="nameTwo">Name 2</label>
+                <input type="text" id="nameTwo" placeholder="Enter name.." >
+            </div>
+
+            <input type="submit" value="Calculate Love percentage">
+
+        </form>
+    </div>
+    <footer class="footer-container">
+
+    </footer>
+    <script type="text/javascript" src="./script/script.js"></script>
+
 </body>
+
 </html>
