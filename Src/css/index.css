@@ -1,3 +1,7 @@
+header {
+    font-size: large;
+}
+
 header{
     position: relative;
     width: 100%;
@@ -22,4 +26,12 @@ header ul  li {
     margin-left: 5px;
     list-style-type: none;
 }
-
+.app-container{
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.app-container div{
+    padding: 10px;
+}

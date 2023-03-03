@@ -21,22 +21,24 @@
     </header>
 </div>
     <div class="app-container">
-        <form action="get" class="loveForm" onsubmit="validateForm()">
+        <div class="game-container" >
             <div>
                 <label for="nameOne">Name 1</label>
-                <input type="text" id="nameOne" name="nameOne" placeholder="Enter name.." onfocus="true" onkeypress="test()">
+                <input type="text" id="nameOne" name="nameOne" placeholder="Enter name.." onfocus="true" >
+                <div id="resultName1"></div>
             </div>
             <div>
                 <label for="nameTwo">Name 2</label>
                 <input type="text" id="nameTwo" placeholder="Enter name.." >
+                <div id="resultName2"></div>
             </div>
 
-            <input type="submit" value="Calculate Love percentage">
+            <button id="submitButton" onclick="submitEvent()">Calculate Love percentage</button>
 
-        </form>
+        </div>
     </div>
     <footer class="footer-container">
-
+        later
     </footer>
     <script type="text/javascript" src="./script/script.js"></script>
 
