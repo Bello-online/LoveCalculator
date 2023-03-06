@@ -1,23 +1,23 @@
 
 
-function tfName1(){
+function tfName1() {
   const firstName = document.getElementById("nameOne");
   const resultName1 = document.getElementById('resultName1');
-  localStorage.setItem('name1',firstName.value);
+  localStorage.setItem('name1', firstName.value);
   if (firstName.value == '') {
     resultName1.innerHTML = "First name is empty!"
   }
-  
+
 }
-function tfName2(){
+function tfName2() {
   const secondName = document.getElementById('nameTwo');
   const resultName2 = document.getElementById('resultName2');
-  localStorage.setItem('name2',secondName.value)
-  
+  localStorage.setItem('name2', secondName.value)
+
   if (secondName.value == "") {
     resultName2.innerHTML = "Second name is empty"
   }
-  
+
 }
 
 //Form validation
@@ -25,9 +25,18 @@ function tfName2(){
 function formValidator() {
   tfName1();
   tfName2();
-  
-}
 
+}
+//@desc putting restriction on the text fields
+function restrictionTf(event) {
+  var y = event.which || event.keyCode;
+  if((y > 96 && y < 123)){
+    return true
+  }
+  else{
+    return false;
+  }
+}
 
 
 //function that creates the numArray by comparing the names
@@ -50,7 +59,7 @@ function comparingNames(name1, name2) {
       }
     }
 
-    if(i == combinedName.length-1 && !testCharacters){
+    if (i == combinedName.length - 1 && !testCharacters) {
       numArray.push(1);
     }
 
@@ -63,7 +72,7 @@ function comparingNames(name1, name2) {
           counter2 = 1
         }
       }
-      
+
       if (counter > 1) {
         numArray.push(counter)
       }
@@ -73,46 +82,50 @@ function comparingNames(name1, name2) {
     }
     discardedCharacters.push(combinedName[i]);
 
-  } console.log(discardedCharacters);
-  console.log(numArray)
-  for(i=discardedCharacters.length;i>0;i--){
+  }
+  for (i = discardedCharacters.length; i > 0; i--) {
     discardedCharacters.pop();
   }
-  console.log(discardedCharacters);
-
   return numArray;
 }
 
 //@desc function that caluclates the love percentage using the numArray(while comparing) 
 function calculatePercentage(numArray) {
- console.log(numArray);
+  let resultPercentage = ''
+  
+  stepsArray = []
+  stepsArray.push(numArray);
+  let k=0;
+  while (stepsArray[k].length > 2) {
+    let tempArray = []
+    for (i = 0; i < stepsArray[k].length; i++) {
+      if (stepsArray[k].length > 2) {
+        if (stepsArray[k].length - 1 - i > i) {
+          let sum = stepsArray[k][i] + stepsArray[k][stepsArray[k].length - i - 1];
+          if(sum > 9){
+            overFlowCheck = sum.toString();
+            newSum = parseInt(overFlowCheck[overFlowCheck.length-1]);
+            tempArray.push(newSum)
+            console.log(newSum)
+          }else{
+            tempArray.push(sum);
+          }
+        }
+        else if (stepsArray[k].length - i - 1 == i) {
+          let noSum = stepsArray[k][i];
+          tempArray.push(noSum);
+        }
+      }
+    }
+    stepsArray.push(tempArray); 
+    k++;
+  }
 
-   numArrayLength = numArray.length;
-  //this to decide thow many times a loop will run
-   numSteps = Math.round((numArrayLength / 2)) - 1;
+  for(i=0;i<stepsArray[stepsArray.length-1].length;i++){
+    resultPercentage += stepsArray[stepsArray.length-1][i];
+  }
+  console.log(resultPercentage)
 
-   stepsArray = []
-    stepsArray.push(numArray);
-    console.log(stepsArray)
-
-   for (k = 0; k < numSteps; k++) {
-     let tempArray = []
-     for (i = 0; i < stepsArray[k].length; i++) {
-
-       if (stepsArray[k].length - 1 - i > i) {
-         let sum = stepsArray[k][i] + stepsArray[k][numArray.length - i - 1];
-         tempArray.push(sum);
-       }
-       else if (stepsArray[k].length - i - 1 == i) {
-         let noSum = stepsArray[k][i];
-         tempArray.push(noSum);
-       }
-
-     }
-     console.log(tempArray)
-     stepsArray.push(tempArray);
-   }
-   console.log(stepsArray);
 }
 
 //@desc function that compares the names and calculates the percentatge

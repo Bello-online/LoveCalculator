@@ -24,12 +24,12 @@
         <div class="game-container" >
             <div>
                 <label for="nameOne">Name 1</label>
-                <input type="text" id="nameOne" name="nameOne" placeholder="Enter name.." onfocus="true" >
+                <input type="text" id="nameOne" name="nameOne" placeholder="Enter name.." onfocus="true" onkeypress="return restrictionTf(event)">
                 <div id="resultName1"></div>
             </div>
             <div>
                 <label for="nameTwo">Name 2</label>
-                <input type="text" id="nameTwo" placeholder="Enter name.." >
+                <input type="text" id="nameTwo" placeholder="Enter name.." onkeypress="return restrictionTf(event)">
                 <div id="resultName2"></div>
             </div>
 
