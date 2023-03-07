@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "bootstrap": "^5.2.3"
+    "@emailjs/browser": "^3.10.0",
+    "bootstrap": "^5.2.3",
+    "type" : "module"
   }
 }
