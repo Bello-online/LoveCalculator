@@ -1,31 +1,4 @@
-header {
-    font-size: large;
-}
 
-header{
-    position: relative;
-    width: 100%;
-    height: 100px;
-    margin-bottom:10px;
-}
-header > img{
-    height: 100%;
-    width:10%;
-    position: absolute;
-    top: 0;
-    left:0;
-}
-header .nav-links{
-    position:absolute;
-    left: 10%;
-    display: flex;
-    flex-direction: row;
-}
-header ul  li {
-    margin-right:5px;
-    margin-left: 5px;
-    list-style-type: none;
-}
 .app-container{
     font-size: 18px;
     display: flex;
@@ -34,4 +7,14 @@ header ul  li {
 }
 .app-container div{
     padding: 10px;
+}
+.game-container{
+    text-align: center;
+}
+.nav-item .active{
+    background-color: blue;
+}
+
+body{
+    background-color: lightbro;
 }
