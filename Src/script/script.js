@@ -1,27 +1,4 @@
 
-//using emailjs
-
-function sendEmail(){
- var params = {
-  name:document.getElementById('user_name'),
-  email:document.getElementById('user_email'),
-  message:document.getElementById('messsage')
- };
- const serviceId = "service_osdl7xa"
-const templateId = "template_h5nhqdj";
-  
-emailjs.send(serviceId,templateId,params)
-.then(
-  (res) =>{
-    document.getElementById('user_name').value = ''
-    document.getElementById('user_email').value = ''
-    document.getElementById('message').value = ''
-    console.log(res);
-    alert("your message send successfully")
-  }
-).catch((err) => console.log(err))
-  }
-
   function tfName1() {
     const firstName = document.getElementById("nameOne");
     const resultName1 = document.getElementById('resultName1');
@@ -45,25 +22,25 @@ emailjs.send(serviceId,templateId,params)
     const allocatedClasses = document.getElementsByClassName('nav-item');
     console.log(allocatedClasses[0].className)
     if (allocatedClasses[0].className == 'nav-item') {
-      allocatedClasses[0].classList.add('bg-primary');
-      allocatedClasses[1].classList.remove('bg-primary')
-      allocatedClasses[2].classList.remove('bg-primary')
+      allocatedClasses[0].classList.add('colorLink');
+      allocatedClasses[1].classList.remove('colorLink')
+      allocatedClasses[2].classList.remove('colorLink')
     }
   }
   function activeLinkClass2() {
     const allocatedClasses = document.getElementsByClassName('nav-item');
     if (allocatedClasses[1].className == 'nav-item') {
-      allocatedClasses[0].classList.remove('bg-primary');
-      allocatedClasses[1].classList.add('bg-primary')
-      allocatedClasses[2].classList.remove('bg-primary')
+      allocatedClasses[0].classList.remove('colorLink');
+      allocatedClasses[1].classList.add('colorLink')
+      allocatedClasses[2].classList.remove('colorLink')
     }
   }
   function activeLinkClass3() {
     const allocatedClasses = document.getElementsByClassName('nav-item');
     if (allocatedClasses[2].className == 'nav-item') {
-      allocatedClasses[0].classList.remove('bg-primary');
-      allocatedClasses[1].classList.remove('bg-primary')
-      allocatedClasses[2].classList.add('bg-primary')
+      allocatedClasses[0].classList.remove('colorLink');
+      allocatedClasses[1].classList.remove('colorLink')
+      allocatedClasses[2].classList.add('colorLink')
     }
   }
   //Form validation
@@ -171,8 +148,22 @@ emailjs.send(serviceId,templateId,params)
       resultPercentage += stepsArray[stepsArray.length - 1][i];
     }
     console.log(resultPercentage)
+    var percentageOfLove = parseInt(resultPercentage);
+    showPercentage(percentageOfLove);
+  }
+
+  //fuction that shows the result percentage
+  function showPercentage(percentageOfLove){
+    const childContainer = document.getElementById('child-container') ;
+    const resultText = document.getElementById('result-percentage');
+    childContainer.style.color = 'red';
+    childContainer.style.width = `${percentageOfLove}%`;
+
+    resultText.innerHTML = `${percentageOfLove}%`;
 
   }
+
+
 
   //@desc function that compares the names and calculates the percentatge
   function loveCalulation() {
@@ -188,4 +179,5 @@ emailjs.send(serviceId,templateId,params)
   function submitEvent() {
     formValidator();
     loveCalulation();
+    
   }
