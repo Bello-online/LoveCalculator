@@ -6,6 +6,9 @@
     if (firstName.value == '') {
       resultName1.innerHTML = "First name is empty!"
     }
+    else{
+      resultName1.innerHTML = ''
+    }
 
   }
   function tfName2() {
@@ -15,6 +18,9 @@
 
     if (secondName.value == "") {
       resultName2.innerHTML = "Second name is empty"
+    }
+    else{
+      resultName2.innerHTML = ''
     }
   }
   //this function controls the active link for the navigation
@@ -156,10 +162,20 @@
   function showPercentage(percentageOfLove){
     const childContainer = document.getElementById('child-container') ;
     const resultText = document.getElementById('result-percentage');
+    const loveMessage = document.getElementById('love-message');
     childContainer.style.color = 'red';
     childContainer.style.width = `${percentageOfLove}%`;
 
     resultText.innerHTML = `${percentageOfLove}%`;
+
+    if(percentageOfLove <51){
+      loveMessage.innerHTML = "Can certainly feel a connection";
+    }else if(percentageOfLove > 50 && percentageOfLove <61){
+      loveMessage.innerHTML = "On the way of Love"
+    }
+    else if(percentageOfLove > 60 && percentageOfLove <71){
+      loveMessage.innerHTML = "Things are getting serious";
+    }
 
   }
 

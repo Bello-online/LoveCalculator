@@ -12,34 +12,41 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script src="./script/handleEmail.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("8WlImGVMZxBNHsfbt");
+        })();
+    </script>
     <script type="text/javascript" src="./script/script.js"></script>
 </head>
 
 <body>
+
     <div class="body-contanier">
-        <video autoplay muted loop id="myVideo">
-            <source src="./videos/production ID_4065917.mp4" type="video/mp4">
-        </video>
-        <header class="header-container">
+
+        <div class="header-container">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="#">Love Calculator</a>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div>
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item colorLink">
-                            <a class="nav-link" href="#" onclick="activeLinkClass1()">Home <span
+                            <a class="nav-link" href="#Home" onclick="activeLinkClass1()">Home <span
                                     class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="activeLinkClass2()">Contact</a>
+                            <a class="nav-link" href="#Contact" onclick="activeLinkClass2()">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="activeLinkClass3()">About</a>
+                            <a class="nav-link" href="#About" onclick="activeLinkClass3()">About</a>
                         </li>
                     </ul>
                 </div>
             </nav>
-        </header>
-        
+        </div>
+
         <div class="app-container" id="Home">
 
             <div class="game-container">
@@ -55,9 +62,11 @@
                     <div id="resultName2"></div>
                 </div>
 
-                <button id="submitButton" onclick="submitEvent()" class="button">Calculate Love percentage</button>
-
+                <button id="submitButton" onclick="submitEvent()" class="button">Calculate Love percentage</button><br>
             </div><!--end of game container-->
+            <div class="heart-container">
+                <img id="heart-gify" src="./videos/giphy.gif" alt="Beating Heart">
+            </div>
             <div class="result-container">
                 <div class="parent-container">
                     <div id="child-container"></div>
@@ -72,20 +81,26 @@
         <div class="contact-form" id="Contact">
             <div class="c-left">
                 <div class="awesome">
-                    <h1>Get in touch and contact me! </h1>
+                    <span>Get in touch</span><br>
+                    <span>Contact me!</span>
                 </div>
             </div>
             <div class="c-right">
-                <form class="form form1">
-                    <input type="text" name="user_name" class="user" placeholder="Name">
-                    <input type="email" name="user_email" class="user" placeholder="E-mail">
-                    <textarea name="message" class="user" placeholder="Message"></textarea>
-                    <input type="submit" value="Send" class="button">
-                </form>
+                <div class="form form1" >
+                    <input type="text"  id="name" class="user" placeholder="Name">
+                    <input type="text"  id="email" class="user" placeholder="E-mail" >
+                    <textarea  id="message" class="user" placeholder="Message" cols="9" rows="2"></textarea>
+                    <button value="Send" class="button" onclick="sendEmail()">Send</button>
+                    <div id="result-email"></div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="about"></div>
+    <div class="about" id="About">
+        <div class="about-heading">
+            <span>About</span>
+        </div>
+    </div>
     <footer class="footer-container">
 
     </footer>
