@@ -1,0 +1,14 @@
+/*about section css*/
+.about {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .about-heading {
+        span {
+            font-size: 50px;
+            color: rgb(250, 66, 97);
+        }
+
+    }
+}

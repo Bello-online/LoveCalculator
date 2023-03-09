@@ -115,7 +115,7 @@ body {
 .game-container {
     text-align: center;
     border: 2px solid pink;
-    height: 350px;
+    height: 375px;
 }
 .result-container {
     display: flex;
@@ -153,46 +153,4 @@ body {
     height: 150px;
     border-radius: 100%;
     margin-top: 1rem;
-}
-/*contact form css*/
-.contact-form{
-    display: flex ;
-    flex-direction: row ;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: 22px;
-    gap: 10%;
-    width: auto;
-    margin-top: 15%;
-    margin-bottom:15%;
-}
-.contact-form .c-left span{
-    font-size: 50px;
-    color: rgb(250, 66, 97);
-}
-.form{
-    display: flex;
-    flex-direction: column;
-}
-.form1 *{
-    margin-top: 20px;
-}
-
-.c-right{
-    width:40vh;
-    border: 2px solid pink;
-}
-.c-right > *{
-    margin: 20px;
-}
-
-/*about section css*/
-.about{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-.about .about-heading{
-    font-size: 50px;
-    color: rgb(250, 66, 97);
 }

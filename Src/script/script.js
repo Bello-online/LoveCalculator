@@ -26,7 +26,6 @@
   //this function controls the active link for the navigation
   function activeLinkClass1() {
     const allocatedClasses = document.getElementsByClassName('nav-item');
-    console.log(allocatedClasses[0].className)
     if (allocatedClasses[0].className == 'nav-item') {
       allocatedClasses[0].classList.add('colorLink');
       allocatedClasses[1].classList.remove('colorLink')
@@ -75,7 +74,6 @@
     const discardedCharacters = []
 
     const combinedName = name1 + loveVar + name2;
-    console.log(combinedName)
 
     for (i = 0; i < combinedName.length; i++) {
       let counter = 1;
@@ -135,7 +133,6 @@
               overFlowCheck = sum.toString();
               newSum = parseInt(overFlowCheck[overFlowCheck.length - 1]);
               tempArray.push(newSum)
-              console.log(newSum)
             } else {
               tempArray.push(sum);
             }
@@ -153,9 +150,9 @@
     for (i = 0; i < stepsArray[stepsArray.length - 1].length; i++) {
       resultPercentage += stepsArray[stepsArray.length - 1][i];
     }
-    console.log(resultPercentage)
     var percentageOfLove = parseInt(resultPercentage);
-    showPercentage(percentageOfLove);
+    return percentageOfLove;
+    // showPercentage(percentageOfLove);
   }
 
   //fuction that shows the result percentage
@@ -187,7 +184,12 @@
     name2 = localStorage.getItem('name2').toLowerCase();
     if (name1 != '' && name2 != '') {
       let numArray = comparingNames(name1, name2);
-      calculatePercentage(numArray);
+      let numArray2 = comparingNames(name2,name1);
+      var value1 = calculatePercentage(numArray);
+      var value2 = calculatePercentage(numArray2);
+
+      var averagePercentage = Math.round((value1 + value2)/2);
+      showPercentage(averagePercentage)
     }
   }
 

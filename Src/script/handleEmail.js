@@ -9,7 +9,6 @@ function sendEmail() {
     var emailRe = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
 
     if (param2.value.match(emailRe)) {
-        console.log(param2.value.match(emailRe))
         isValidEmail = true;
     }
     var templateParams = {
@@ -39,9 +38,13 @@ function sendEmail() {
         if (param2.value == '') {
             message += "Email is empty! \n"
 
-        } if (isValidEmail == false) {
-            message += "Email Criteria doesn't match! \n"
         }
+        if (param2.value != "") {
+            if (isValidEmail == false) {
+                message += "Email Criteria doesn't match! \n"
+            }
+        }
+
         if (param3.value == '') {
             message += 'Write some message!'
         }
