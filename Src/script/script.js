@@ -6,6 +6,9 @@
     if (firstName.value == '') {
       resultName1.innerHTML = "First name is empty!"
     }
+    else{
+      resultName1.innerHTML = ''
+    }
 
   }
   function tfName2() {
@@ -16,11 +19,13 @@
     if (secondName.value == "") {
       resultName2.innerHTML = "Second name is empty"
     }
+    else{
+      resultName2.innerHTML = ''
+    }
   }
   //this function controls the active link for the navigation
   function activeLinkClass1() {
     const allocatedClasses = document.getElementsByClassName('nav-item');
-    console.log(allocatedClasses[0].className)
     if (allocatedClasses[0].className == 'nav-item') {
       allocatedClasses[0].classList.add('colorLink');
       allocatedClasses[1].classList.remove('colorLink')
@@ -69,7 +74,6 @@
     const discardedCharacters = []
 
     const combinedName = name1 + loveVar + name2;
-    console.log(combinedName)
 
     for (i = 0; i < combinedName.length; i++) {
       let counter = 1;
@@ -129,7 +133,6 @@
               overFlowCheck = sum.toString();
               newSum = parseInt(overFlowCheck[overFlowCheck.length - 1]);
               tempArray.push(newSum)
-              console.log(newSum)
             } else {
               tempArray.push(sum);
             }
@@ -147,20 +150,36 @@
     for (i = 0; i < stepsArray[stepsArray.length - 1].length; i++) {
       resultPercentage += stepsArray[stepsArray.length - 1][i];
     }
-    console.log(resultPercentage)
     var percentageOfLove = parseInt(resultPercentage);
-    showPercentage(percentageOfLove);
+    return percentageOfLove;
+    // showPercentage(percentageOfLove);
   }
 
   //fuction that shows the result percentage
   function showPercentage(percentageOfLove){
     const childContainer = document.getElementById('child-container') ;
     const resultText = document.getElementById('result-percentage');
+    const loveMessage = document.getElementById('love-message');
+    loveMessage.style.color = "red"
     childContainer.style.color = 'red';
     childContainer.style.width = `${percentageOfLove}%`;
 
     resultText.innerHTML = `${percentageOfLove}%`;
+    resultText.style.color = 'red'
 
+    if(percentageOfLove <51){
+      loveMessage.innerHTML = "Can certainly feel a connection. Things can work out if you guys get serious. Just keep the momentum going.";
+    }else if(percentageOfLove > 50 && percentageOfLove <61){
+      loveMessage.innerHTML = "On the way of Love. The path is tough. When you talk about love, you should both consider pain. Share your pain and love on this way of love."
+    }
+    else if(percentageOfLove > 60 && percentageOfLove <71){
+      loveMessage.innerHTML = "Congratulations. Things are getting serious! It is this moment when you feel good when you are with this person. Go for it.";
+    }
+    else if(percentageOfLove > 70 && percentageOfLove <81)
+    {loveMessage.innerHTML = "You are made for each other. At this moment, even the fall season is beautiful because you are with the Spring(your love) now!"}
+    else if(percentageOfLove > 80){
+      loveMessage.innerHTML = "How does it feel when you both listen to 'Perfect' by 'Ed Sheran'. The is the best feeling in the world. Embrace you love. Protect it. You don't need this calculator anymore."
+    }
   }
 
 
@@ -171,7 +190,12 @@
     name2 = localStorage.getItem('name2').toLowerCase();
     if (name1 != '' && name2 != '') {
       let numArray = comparingNames(name1, name2);
-      calculatePercentage(numArray);
+      let numArray2 = comparingNames(name2,name1);
+      var value1 = calculatePercentage(numArray);
+      var value2 = calculatePercentage(numArray2);
+
+      var averagePercentage = Math.round((value1 + value2)/2);
+      showPercentage(averagePercentage)
     }
   }
 
