@@ -160,20 +160,26 @@
     const childContainer = document.getElementById('child-container') ;
     const resultText = document.getElementById('result-percentage');
     const loveMessage = document.getElementById('love-message');
+    loveMessage.style.color = "red"
     childContainer.style.color = 'red';
     childContainer.style.width = `${percentageOfLove}%`;
 
     resultText.innerHTML = `${percentageOfLove}%`;
+    resultText.style.color = 'red'
 
     if(percentageOfLove <51){
-      loveMessage.innerHTML = "Can certainly feel a connection";
+      loveMessage.innerHTML = "Can certainly feel a connection. Things can work out if you guys get serious. Just keep the momentum going.";
     }else if(percentageOfLove > 50 && percentageOfLove <61){
-      loveMessage.innerHTML = "On the way of Love"
+      loveMessage.innerHTML = "On the way of Love. The path is tough. When you talk about love, you should both consider pain. Share your pain and love on this way of love."
     }
     else if(percentageOfLove > 60 && percentageOfLove <71){
-      loveMessage.innerHTML = "Things are getting serious";
+      loveMessage.innerHTML = "Congratulations. Things are getting serious! It is this moment when you feel good when you are with this person. Go for it.";
     }
-
+    else if(percentageOfLove > 70 && percentageOfLove <81)
+    {loveMessage.innerHTML = "You are made for each other. At this moment, even the fall season is beautiful because you are with the Spring(your love) now!"}
+    else if(percentageOfLove > 80){
+      loveMessage.innerHTML = "How does it feel when you both listen to 'Perfect' by 'Ed Sheran'. The is the best feeling in the world. Embrace you love. Protect it. You don't need this calculator anymore."
+    }
   }
 
 

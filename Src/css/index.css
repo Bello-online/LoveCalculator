@@ -28,6 +28,19 @@
     .contact-form .c-right{
         width: 75% !important;
     }
+    .about{
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10% !important;
+        margin-top: 10rem !important;
+    }
+    .about .about-details{
+        width: 75% !important;
+        margin:1rem !important ;
+    }
+    .about .about-heading , .about-details{
+        text-align: center;
+    }
   }
 #myVideo {
     position: fixed;
@@ -153,4 +166,7 @@ body {
     height: 150px;
     border-radius: 100%;
     margin-top: 1rem;
+}
+input{
+    background-color: pink;
 }
