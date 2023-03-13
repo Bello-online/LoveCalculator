@@ -6,7 +6,7 @@ function sendEmail() {
     const result_cont = document.getElementById('result-email');
 
     var isValidEmail = false;
-    var emailRe = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+    var emailRe = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,4}$/;
 
     if (param2.value.match(emailRe)) {
         isValidEmail = true;
