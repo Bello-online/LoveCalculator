@@ -11,7 +11,7 @@ Javascript
 Bootstrap
 
 # Website
-https://bello-online.github.io/CollabSite/
+https://bello-online.github.io/LoveCalculator/
 
 ## Contribution
 Made by a patnership between Bello Olaseni and Rajat Rajat
